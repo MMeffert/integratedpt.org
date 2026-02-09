@@ -23,6 +23,146 @@
 	  position: absolute;
 	  left: -999em;
 	}
+
+	/* Contact page styles */
+	.contact-content {
+		--green: #46BE06;
+		--green-light: #e8f8e0;
+		--blue-light: #CBECFD;
+		--blue-mid: #7CCFFA;
+		--dark: #2D383A;
+		--gray: #555;
+		padding: 30px 35px 40px;
+		font-family: Arial, Helvetica, sans-serif;
+		background: #fff;
+	}
+	.contact-content h1 {
+		font-family: 'Open Sans Condensed', Arial, sans-serif;
+		font-weight: 700;
+		font-size: 28px;
+		color: var(--dark);
+		margin: 0 0 8px;
+	}
+	.contact-content .subtitle {
+		font-size: 14px;
+		color: var(--gray);
+		line-height: 1.5;
+		margin: 0 0 24px;
+	}
+	.contact-cards {
+		display: flex;
+		gap: 14px;
+		margin-bottom: 32px;
+	}
+	.contact-card {
+		flex: 1;
+		background: var(--green-light);
+		border-radius: 8px;
+		padding: 20px 16px;
+		text-align: center;
+		transition: box-shadow 0.2s ease, transform 0.2s ease;
+	}
+	.contact-card:hover {
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		transform: translateY(-2px);
+	}
+	.contact-card .card-icon {
+		width: 32px;
+		height: 32px;
+		margin: 0 auto 10px;
+		display: block;
+	}
+	.contact-card .card-icon svg {
+		fill: var(--green);
+	}
+	.contact-card .card-label {
+		font-family: 'Open Sans Condensed', Arial, sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		color: var(--dark);
+		margin-bottom: 6px;
+	}
+	.contact-card .card-value {
+		font-size: 13px;
+		color: var(--gray);
+		line-height: 1.4;
+	}
+	.contact-card a {
+		color: var(--green);
+		text-decoration: none;
+	}
+	.contact-card a:hover {
+		text-decoration: underline;
+	}
+	.section-heading {
+		font-family: 'Open Sans Condensed', Arial, sans-serif;
+		font-weight: 700;
+		font-size: 22px;
+		color: var(--dark);
+		margin: 0 0 18px;
+		padding-bottom: 10px;
+		border-bottom: 3px solid var(--green);
+	}
+	.location-cards {
+		display: flex;
+		gap: 14px;
+	}
+	.location-card {
+		flex: 1;
+		background: var(--blue-light);
+		border-radius: 8px;
+		padding: 20px 16px;
+		transition: box-shadow 0.2s ease, transform 0.2s ease;
+	}
+	.location-card:hover {
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		transform: translateY(-2px);
+	}
+	.location-card .loc-icon {
+		width: 24px;
+		height: 24px;
+		margin-bottom: 8px;
+	}
+	.location-card .loc-icon svg {
+		fill: var(--blue-mid);
+	}
+	.location-card .loc-name {
+		font-family: 'Open Sans Condensed', Arial, sans-serif;
+		font-weight: 700;
+		font-size: 16px;
+		color: var(--dark);
+		margin-bottom: 8px;
+	}
+	.location-card .loc-address {
+		font-size: 13px;
+		color: var(--gray);
+		line-height: 1.5;
+		margin-bottom: 6px;
+	}
+	.location-card .loc-phone {
+		font-size: 13px;
+		color: var(--gray);
+		margin-bottom: 12px;
+	}
+	.location-card .loc-directions {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		font-size: 13px;
+		font-weight: 700;
+		color: var(--green);
+		text-decoration: none;
+		transition: gap 0.2s ease;
+	}
+	.location-card .loc-directions:hover {
+		text-decoration: underline;
+		gap: 8px;
+	}
+	.location-card .loc-directions svg {
+		width: 14px;
+		height: 14px;
+		fill: var(--green);
+	}
 </style>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="canonical" href="https://www.integratedpt.org/contactus.html">
@@ -132,22 +272,56 @@
 				<img src="images/spacer.gif" width="1" height="1" alt="">
 		</td></tr>
 	</table></td>
-	<td height="225" width="766" background="images/bgr_c1.jpg" style="background-repeat:repeat; background-position:top left; width:766px; height:225px"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="images/bgr_c1_t.jpg" style="background-repeat:repeat-x; background-position:top left; width:100%; height:100%">
+	<td width="766" background="images/bgr_c1.jpg" style="background-repeat:repeat; background-position:top left; width:766px"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="images/bgr_c1_t.jpg" style="background-repeat:repeat-x; background-position:top left; width:100%; height:100%">
 		<tr><td width="100%" height="100%" background="images/bgr_c1_d.jpg" style="background-repeat:repeat-x; background-position:bottom left; width:100%; height:100%">
-			<table width="100%" border="0" cellpadding="0" cellspacing="0">
-				<tr>
-					<td height="225"><p>&nbsp;</p>
-						<p style="margin-left:50px; margin-right:50px; margin-top:30px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height: 17px;"><strong>Email - Brittany Pollentier</strong> | <a href="mailto:bpollentier@integratedpt.org">bpollentier@integratedpt.org</a></p>
-					  <p style="margin-left:50px; margin-right:50px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height: 17px;"><strong>Email - Dee Aussprung</strong> | <a href="mailto:daussprung@integratedpt.org">daussprung@integratedpt.org</a></p>
-					  <p style="margin-left:50px; margin-right:50px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height: 17px;">
-					  <br>
-					  <strong>Main office</strong> | 608.658.5352<br>
-<strong>Referral for physical therapy</strong> | fax 888.965.4018</p>
-					  <table height="100%" width="3" border="0" cellpadding="0" cellspacing="0">
-			          </table>
-				  <p>&nbsp;</p></td>
-				</tr>
-			</table>
+			<div class="contact-content">
+				<h1>Get in Touch</h1>
+				<p class="subtitle">We'd love to hear from you. Reach out to schedule an appointment or ask about our services.</p>
+
+				<div class="contact-cards">
+					<div class="contact-card">
+						<div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg></div>
+						<div class="card-label">Phone</div>
+						<div class="card-value">608.658.5352</div>
+					</div>
+					<div class="contact-card">
+						<div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-1-9H6v4h12V3z"/></svg></div>
+						<div class="card-label">Fax</div>
+						<div class="card-value">888.965.4018</div>
+					</div>
+					<div class="contact-card">
+						<div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+						<div class="card-label">Email</div>
+						<div class="card-value"><a href="mailto:bpollentier@integratedpt.org">bpollentier@integratedpt.org</a></div>
+					</div>
+				</div>
+
+				<h2 class="section-heading">Our Locations</h2>
+
+				<div class="location-cards">
+					<div class="location-card">
+						<div class="loc-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div>
+						<div class="loc-name">Madison</div>
+						<div class="loc-address">313 Junction Rd<br>Madison, WI 53717</div>
+						<div class="loc-phone">608.658.5352</div>
+						<a class="loc-directions" href="https://www.google.com/maps/dir/?api=1&destination=313+Junction+Rd,+Madison,+WI+53717" target="_blank" rel="noopener noreferrer">Get Directions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+					</div>
+					<div class="location-card">
+						<div class="loc-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div>
+						<div class="loc-name">Waunakee</div>
+						<div class="loc-address">5477 Westshire Circle<br>Waunakee, WI 53597</div>
+						<div class="loc-phone">608.658.5352</div>
+						<a class="loc-directions" href="https://www.google.com/maps/dir/?api=1&destination=5477+Westshire+Circle,+Waunakee,+WI+53597" target="_blank" rel="noopener noreferrer">Get Directions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+					</div>
+					<div class="location-card">
+						<div class="loc-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div>
+						<div class="loc-name">Cottage Grove</div>
+						<div class="loc-address">645 Sandpiper Trail<br>Cottage Grove, WI 53527</div>
+						<div class="loc-phone">608.658.5352</div>
+						<a class="loc-directions" href="https://www.google.com/maps/dir/?api=1&destination=645+Sandpiper+Trail,+Cottage+Grove,+WI+53527" target="_blank" rel="noopener noreferrer">Get Directions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+					</div>
+				</div>
+			</div>
 		</td></tr>
 	</table></td>
 	<td height="100%" background="images/bgr_c1_.jpg" style="background-repeat:repeat; background-position:top left"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="images/bgr_c1_tt.jpg" style="background-repeat:repeat-x; background-position:top left; width:100%; height:100%">
@@ -162,20 +336,11 @@
 <tr><td height="1" bgcolor="#888E8F" colspan="3"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
 <tr>
 	<td bgcolor="#2D383A"><img src="images/spacer.gif" width="1" height="1" alt=""></td>
-	<td width="766" height="180" bgcolor="#2D383A"><table width="766" height="100%" border="0" cellpadding="0" cellspacing="0">
+	<td width="766" bgcolor="#2D383A"><table width="766" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width="255" height="100%"><p style="margin-left:15px; margin-right:15px; margin-top:5px;"><br>
-					        <br>
-					        <br>
-				          <strong>Integrated Physical Therapy</strong><br>
-				          313 Junction Rd<br>
-				          Madison, WI 53717<br>Phone: 608.658.5352<br>Fax: 888.965.4018</p></td>
-                          <td width="255" height="100%"><p style="margin-left:15px; margin-right:15px; margin-top:5px;"><br>
-					        <br>
-					        <br>
-						  <strong>Integrated Physical Therapy <br>
-				          location at Westshire Village</strong><br>
-				          5477 Westshire Circle<br>Waunakee, WI 53597<br>Phone: 608.658.5352<br>Fax: 888.965.4018</p></td>
+			<td width="255" style="overflow:hidden"><img src="images/junctionrd.jpg" style="display:block; width:255px; height:134px; object-fit:cover;" alt="Madison office at 313 Junction Rd"></td>
+			<td width="256" style="overflow:hidden"><img src="images/ipt_westshire.jpg" style="display:block; width:256px; height:134px; object-fit:cover;" alt="Waunakee office at 5477 Westshire Circle"></td>
+			<td width="255" style="overflow:hidden"><img src="images/CottageGroveLocation.jpg" style="display:block; width:255px; height:134px; object-fit:cover;" alt="Cottage Grove office at 645 Sandpiper Trail"></td>
 		</tr>
 	</table></td>
 	<td bgcolor="#2D383A"><img src="images/spacer.gif" width="1" height="1" alt=""></td>

@@ -1065,6 +1065,9 @@ body.layout-mode-responsive .rt-big-title code .title,.rt-big-title code .title{
 
 body, html {margin:0px; padding:0px; background-color:#4C5759;}
 
+body > table { height: auto !important; overflow: hidden; }
+body > table td[height="100%"] > table[height="100%"] { height: auto !important; }
+
 table{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#FFFFFF; text-decoration:none; text-align:justify; vertical-align:top;}
 
 form, p{ margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;}
@@ -1078,6 +1081,7 @@ td, tr {vertical-align:top; text-align:left}
 .menu a{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#CFCBCB; text-decoration:none; text-transform:uppercase;}
 .menu a:hover{text-decoration:underline}
 .copy{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#888E8F; text-decoration:none;}
+.copy:last-child{ padding-bottom:15px; }
 .copyl{ font:15px/17px Tahoma, Arial, Geneva, sans-serif; color:#888E8F; text-decoration:none;}
 .gr{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#D4FF00; text-decoration:none;}
 .gr:hover{text-decoration:underline}
