@@ -15,26 +15,12 @@ Static website for **Integrated Physical Therapy (IPT)**, a physical therapy pra
 - **Pages**: Each HTML page duplicates the full header/nav/footer structure (no templating). Shared `<meta>` description and keywords are identical across all pages.
 - **Award badges**: The header includes "Best of Madison" award images (2022 Bronze, 2023 Silver, 2025 Silver) that appear across all pages.
 
-## Pages
-
-| File | Purpose |
-|------|---------|
-| `index.html` | Homepage with image slider |
-| `specializedpt.html` | PT services offered |
-| `locations.html` | Office locations/maps |
-| `insurance.html` | Accepted insurance |
-| `forms.html` | Patient intake forms |
-| `aboutus.html` | Staff bios |
-| `contactus.html` | Contact info |
-| `telerehab.html` | Telerehab/virtual visits |
-| `media.html` | Media/news coverage |
-
 ## Key Files
 
 - `styles.css` -- All styling. First ~1065 lines are Gantry framework CSS; site-specific styles start at line ~1066.
 - `images/` -- All site images including nav buttons (`m1.jpg`-`m5.jpg`, `m1m.jpg`-`m5m.jpg`), backgrounds (`bgr_*`), staff photos, and PDFs.
+- `slider_files/` -- Homepage image slider (iframe-based). Includes `slider-en.html`, `adjast-slider.js`, and slide images/CSS.
 - `BingSiteAuth.xml` / `google19ebac6a1b17f216.html` -- Search engine verification files. Do not modify or remove.
-- `.well-known/pki-validation/` -- SSL certificate verification. Do not modify or remove.
 
 ## Development
 
@@ -43,9 +29,17 @@ No build tools. Open HTML files directly in a browser or use any local HTTP serv
 python3 -m http.server 8000
 ```
 
+## Deployment
+
+Push to `main` triggers GitHub Actions (`.github/workflows/deploy.yml`):
+1. OIDC auth via `aws-actions/configure-aws-credentials` (role ARN in GitHub secret)
+2. `aws s3 sync` to bucket `integratedpt.org` with `--delete` (excludes `.git/`, `.github/`, `.claude/`, `CLAUDE.md`, `.gitignore`, `.gitattributes`)
+3. HTML files get 5-min cache; all other assets get 1-year cache
+4. CloudFront invalidation (`/*`) on distribution `E2FEV1DY0V5FHM`
+
+Infrastructure (S3, CloudFront, Route 53, ACM cert) was created manually in 2019 -- no IaC manages it.
+
 ## Important Notes
 
-- **No templating**: Header, nav, and footer are copy-pasted across every page. Changes to shared elements must be manually replicated to all HTML files.
-- **Deployment**: Push to `main` triggers GitHub Actions → S3 sync → CloudFront invalidation via OIDC.
+- **No templating**: Header, nav, and footer are copy-pasted across every page. Changes to shared elements must be manually replicated to all 9 HTML files.
 - **Image nav**: The main navigation bar is entirely image-based (JPEG background images on table cells with spacer GIFs for click targets). Changing nav labels requires editing the source image files, not HTML text.
-- **Slider dependency**: `index.html` references `slider_files/slider-en.html` and `slider_files/adjast-slider.js`. These files exist on disk but are not tracked in git.
