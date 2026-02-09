@@ -680,7 +680,7 @@ body.layout-mode-responsive .sprocket-mosaic-columns-3>li,body.layout-mode-respo
 
 .rt-readon-row{text-align:center}
 
-.rt-readon-row .readon{font-style:1.5em;margin:25px 15px 0 15px}
+.rt-readon-row .readon{font-size:1.5em;margin:25px 15px 0 15px}
 
 @media(max-width:1199px){body.layout-mode-responsive .menu-block .gf-menu>li{margin-right:0}
 
@@ -1081,7 +1081,7 @@ td, tr {vertical-align:top; text-align:left}
 .copyl{ font:15px/17px Tahoma, Arial, Geneva, sans-serif; color:#888E8F; text-decoration:none;}
 .gr{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#D4FF00; text-decoration:none;}
 .gr:hover{text-decoration:underline}
-.text{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:58595b; text-decoration:none;}
+.text{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#58595b; text-decoration:none;}
 .text:hover{text-decoration:underline}
 .x1{ font:11px/13px Tahoma, Arial, Geneva, sans-serif; color:#D1D1D1; text-decoration:none;}
 .x1:hover{text-decoration:underline}
@@ -1110,7 +1110,6 @@ td, tr {vertical-align:top; text-align:left}
 	text-indent: 0px;
 	list-style-type: disc;
     list-style-position: outside;
-    text-indent: 0px;
     padding-left: 0px;
 	}
 
