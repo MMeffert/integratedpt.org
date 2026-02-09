@@ -46,6 +46,6 @@ python3 -m http.server 8000
 ## Important Notes
 
 - **No templating**: Header, nav, and footer are copy-pasted across every page. Changes to shared elements must be manually replicated to all HTML files.
-- **No git remote configured**: This repo has no remote origin set up.
+- **Deployment**: Push to `main` triggers GitHub Actions → S3 sync → CloudFront invalidation via OIDC.
 - **Image nav**: The main navigation bar is entirely image-based (JPEG background images on table cells with spacer GIFs for click targets). Changing nav labels requires editing the source image files, not HTML text.
 - **Slider dependency**: `index.html` references `slider_files/slider-en.html` and `slider_files/adjast-slider.js`. These files exist on disk but are not tracked in git.
