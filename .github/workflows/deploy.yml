@@ -1,0 +1,65 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET: integratedpt.org
+  CLOUDFRONT_DISTRIBUTION_ID: E2FEV1DY0V5FHM
+
+jobs:
+  deploy:
+    name: Deploy Static Site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync files to S3
+        run: |
+          # Sync all files with long cache (1 year for images, CSS, etc.)
+          aws s3 sync . s3://${{ env.S3_BUCKET }} \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".claude/*" \
+            --exclude ".gitattributes" \
+            --exclude ".gitignore" \
+            --exclude "CLAUDE.md" \
+            --cache-control "max-age=31536000,public" \
+            --metadata-directive REPLACE
+
+          # Override HTML files with short cache (5 min) for quick updates
+          for html_file in $(find . -name "*.html" -not -path "./.git/*" -not -path "./.github/*"); do
+            aws s3 cp "$html_file" "s3://${{ env.S3_BUCKET }}/${html_file#./}" \
+              --cache-control "max-age=300,public" \
+              --content-type "text/html" \
+              --metadata-directive REPLACE
+          done
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+
+      - name: Deployment complete
+        run: |
+          echo "Deployment complete!"
+          echo "Website URL: https://integratedpt.org"
+          echo "CloudFront Distribution: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}"
